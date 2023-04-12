@@ -7,7 +7,6 @@ def error_message_details(error, error_details:sys):
     file_loc = exc_tb.tb_lineno
     error_message = f'Error occured in python script name{file_name}, line no{file_loc} and error message {str(error)}'
     
-    
     return error_message
 
 
