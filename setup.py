@@ -21,6 +21,11 @@ def get_requirements(file_path:str)->List(str):
             requirements.remove(HYPHEN_E_DOT)
 
 
+    return requirements
+
+
+
+
 
 
 
