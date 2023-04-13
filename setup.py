@@ -1,33 +1,37 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 from typing import List
 
 HYPHEN_E_DOT = '-e .'
 
-def get_requirements(file_path:str)->List(str):
-    """This function will return list of requirments
-        from requirements.txt file
-    """
-    """initializing empty list for storing"""
-    requirements=[]
+def get_requirements(file_path:str)->List[str]:
+    '''
+    This function will return list of requirements
+    from requirements.txt file
+    '''
+    # Initializing blank requirements list
+    requirements = []
 
-    """opening the file"""
-    with open(file_path, 'rb') as file_obj:
+    # Opening the file
+    with open(file_path) as file_obj:
         requirements = file_obj.readlines()
-        requirements = [i.replace('\n','') for i in requirements]
-
-        '''Removing hypen_dot_e if present in requirments'''
-        if HYPHEN_E_DOT = '-e .' in requirements:
+        requirements = [req.replace("\n","") for req in requirements]
+        
+        # Remove hyphen_e_dot if present in requirements
+        if HYPHEN_E_DOT in requirements:
             requirements.remove(HYPHEN_E_DOT)
-
 
     return requirements
 
 
+"""setup is like metadata here"""
+
 setup(
-    name='mlproject03',
-    version='0.0.1',
-    author='Akshay Gawande',
-    author_email='avgawande@gmail.com',
-    packages=find_packages(),
-    install_requires = get_requirements('requirements.txt')
-    )
+
+name='mlproject',
+version='0.0.2',
+author='Akkii',
+author_email='avgawande@gmail.com',
+packages=find_packages(),
+install_requires = get_requirements('requirements.txt')
+
+)
